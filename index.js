@@ -67,6 +67,8 @@ function processLength(list, callback) {
  * should return 'barbar'.
 */
 function processLastItem(stringList, callback) {
+  var popped = stringList.pop();
+  return callback(popped)
 }
 
 /**
@@ -86,8 +88,11 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(numberList, callback) {
+  const sum = numberList.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  }, 0)
+return callback(sum)
 }
 
 /**
