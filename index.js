@@ -187,10 +187,12 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
 function getFullNames(runners) {
-  runners.forEach(() => {
-    return (runners.last_name, runners.first_name);
-  });
-}
+  let fullName=[];
+  runners.forEach(function(items){
+    return fullName.push(`${items.last_name}, ${items.first_name}`)
+
+  })}
+
 
 /**
  * ### Challenge `firstNamesAllCaps`
