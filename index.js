@@ -188,11 +188,16 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 */
 function getFullNames(runners) {
   let fullName=[];
-  runners.forEach(function(items){
-    return fullName.push(`${items.last_name}, ${items.first_name}`)
 
-  })}
+  runners.forEach(function(item){
+    return fullName.push(`${item.last_name}, ${item.first_name}`)
 
+  });
+
+return fullName;
+
+}
+ 
 
 /**
  * ### Challenge `firstNamesAllCaps`
@@ -206,9 +211,13 @@ function getFullNames(runners) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  let firstName = runners.map(function(item){
+    item.toUppercase;
+  })
+  return firstName
 }
+
 
 /**
  * ### Challenge `getRunnersByTShirtSize`
@@ -223,8 +232,8 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+runners.filter(size => size.tShirtSize);  
 }
 
 /**
@@ -237,8 +246,11 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  const tally = runners.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.donation;
+  }, 0)
+return tally;
 }
 
 /////////////// CLOSURES ///////////////
