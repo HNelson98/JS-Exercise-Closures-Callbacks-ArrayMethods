@@ -89,8 +89,8 @@ function processLastItem(stringList, callback) {
  * should return 1000.
 */
 function processSum(numberList, callback) {
-  const sum = numberList.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
+  const sum = numberList.reduce((accumulated, currentValue) => {
+    return accumulated + currentValue;
   }, 0)
 return callback(sum)
 }
@@ -190,7 +190,7 @@ function getFullNames(runners) {
   let fullName=[];
 
   runners.forEach(function(item){
-    return fullName.push(`${item.last_name}, ${item.first_name}`)
+    fullName.push(`${item.last_name}, ${item.first_name}`)
 
   });
 
@@ -212,10 +212,9 @@ return fullName;
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  let firstName = runners.map(function(item){
-    item.toUppercase;
+  return runners.map(function(name){
+     runners.name.toUppercase(runners.first_name)
   })
-  return firstName
 }
 
 
@@ -233,7 +232,7 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-runners.filter(size => size.tShirtSize);  
+return runners.filter(size => size.tShirtSize(""))
 }
 
 /**
@@ -247,10 +246,10 @@ runners.filter(size => size.tShirtSize);
  * @returns a number which is the sum of the donations by all runners.
 */
 function tallyUpDonations(runners) {
-  const tally = runners.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.donation;
+ return runners.reduce((total, runner) => {
+    return total + runner.donation;
   }, 0)
-return tally;
+;
 }
 
 /////////////// CLOSURES ///////////////
@@ -271,9 +270,9 @@ return tally;
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
+  let count = 0;
+ return function counter() {
+   return count++;
   }
   // BROKEN CODE ENDS
 }
@@ -298,8 +297,15 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(limit) {
+  let count = 0;
+  function counter(){
+ if (count > limit){
+   count = 0
+ } 
+ return count++
+  }
+return counter
 }
 
 /////////////// END OF CHALLENGE ///////////////
